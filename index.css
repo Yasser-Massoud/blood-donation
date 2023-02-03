@@ -1,0 +1,727 @@
+
+
+
+body{
+    background-color: #eee;
+    padding: 0;
+    margin: 0;
+}
+
+#start_screen{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #262828;
+    overflow: hidden;
+    text-align: center;
+    font-family: "Arial Black", sans-serif;
+}
+
+#start_screen:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 100%;
+    background-color: #262828;
+    -webkit-animation-name: slidingLeft;
+    -webkit-animation: slidingLeft 3s 2s forwards;
+}
+
+@-webkit-keyframes slidingLeft {
+    to{ left: 100%; }
+}
+
+#start_screen .presenting-text,#start_screen .Collaboration-text,
+#start_screen .serena-name-text,#start_screen .manofaction-name-text,
+#start_screen .plus-text,#start_screen .manofaction-name-text,
+#start_screen .and-text,#start_screen .sickline-name-text,
+#start_screen .horizontal-line,#start_screen .like-text{
+    position: absolute;
+    top: 210px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#start_screen .presenting-text{
+    font-family: "Arial Black", sans-serif;
+    letter-spacing: 6px;
+    color: #f9dc52;
+    -webkit-animation: textSlidingTop 2s 5s forwards;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%, rgb(255, 51, 140) 0%, rgba(252,251,121,1) 90% );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#start_screen .Collaboration-text{
+    letter-spacing: 3px;
+    font-family: 'Pacifico', cursive;
+    font-size: 10px;
+    top: 280px;
+    color: #67ffcf;
+    -webkit-animation-name: bounceInLeft, collabSlidingTop;
+    -webkit-animation-duration: 2000ms, 1000ms;
+    -webkit-animation-delay: 4s, 6s;
+    -webkit-animation-timing-function: ease-in, ease-out;
+    -webkit-animation-iteration-count: 1, 1;
+    -webkit-animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+#start_screen .serena-name-text{
+    font-family: 'Cinzel', serif;
+    top: 170px;
+    color: #ff338c;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0;
+    -webkit-animation: zoomInRight 1s 7s forwards;
+}
+
+#start_screen .plus-text{
+    top: 180px;
+    color:chocolate;
+    opacity: 0;
+    -webkit-animation: fadeIn 2s 8s forwards;
+}
+
+#start_screen .manofaction-name-text{
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+    top: 236px;
+    background-color: #44ff98;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 16px;
+    opacity: 0;
+    -webkit-animation: bounceInUp 1s 9s forwards;
+}
+
+#start_screen .and-text{
+    top: 260px;
+    color: chocolate;
+    opacity: 0;
+    font-size: 16px;
+    -webkit-animation: fadeIn 2s 11s forwards;
+}
+
+#start_screen .sickline-name-text{
+    top: 290px;
+    font-size: 16px;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    color: #FFFF99;
+    opacity: 0;
+    -webkit-animation: bounceInDown 1s 11s forwards;
+}
+
+#start_screen .horizontal-line{
+    width: 0;
+    height: 2px;
+    top: 350px;
+    background-image: linear-gradient( 102.2deg,  rgba(252,40,154,1) -9.9%, rgba(224,125,154,1) 34.7%, rgba(250,165,147,1) 89.1% );
+    -webkit-animation: widthIncrease 2s 12s forwards;
+}
+
+#start_screen .like-text{
+    top: 360px;
+    font-size: 10px;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 4px;
+    color: #99ff89;
+    opacity: 0;
+    -webkit-animation: fadeIn 2s 13s forwards;
+}
+
+@-webkit-keyframes widthIncrease {
+    to{width: 60%;}
+}
+
+@-webkit-keyframes bounceInDown {
+    from, 60%, 75%, 90%, to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -3000px, 0) translateX(-50%);
+        transform: translate3d(0, -3000px, 0) translateX(-50%);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 25px, 0) translateX(-50%);
+        transform: translate3d(0, 25px, 0) translateX(-50%);
+    }
+
+    75% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, -10px, 0) translateX(-50%);
+        transform: translate3d(0, -10px, 0) translateX(-50%);
+    }
+
+    90% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 5px, 0) translateX(-50%);
+        transform: translate3d(0, 5px, 0) translateX(-50%);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0) translateX(-50%);
+        transform: translate3d(0, 0, 0) translateX(-50%);
+    }
+}
+
+@-webkit-keyframes bounceInUp {
+    from, 60%, 75%, 90%, to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 3000px, 0) translateX(-50%);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, -20px, 0) translateX(-50%);
+    }
+
+    75% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 10px, 0) translateX(-50%);;
+    }
+
+    90% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, -5px, 0) translateX(-50%);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0) translateX(-50%);
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes zoomInRight {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);
+        -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0);
+        -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes  collabSlidingTop{
+    to{
+        top: 136px;
+    }
+}
+
+@-webkit-keyframes  textSlidingTop{
+    to{
+        top: 80px;
+    }
+}
+
+@-webkit-keyframes bounceInLeft {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-3000px, 0, 0) translateX(-50%);;
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translate3d(25px, 0, 0) translateX(-50%);;
+    }
+
+    75% {
+        opacity: 1;
+        -webkit-transform: translate3d(-10px, 0, 0) translateX(-50%);;
+    }
+
+    90% {
+        opacity: 1;
+        -webkit-transform: translate3d(5px, 0, 0) translateX(-50%);;
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0) translateX(-50%);;
+    }
+}
+
+
+#loading_container{
+    position: relative;
+    width:350px;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: none;
+}
+
+.bag_l_eye, .bag_r_eye, .heart_l_eye, .heart_r_eye{
+    position: absolute;
+    width: 20px; height: 20px;
+    top: 85px; left: 38px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.line{
+    position: absolute;
+    width: 23px; height: 5px;
+    top: 140px; left: 30px;
+    background-color: #ade1f9;
+}
+
+.line::after{
+    position: absolute;
+    width: 23px; height: 5px;
+    top: 12px; left: 0;
+    background-color: #ade1f9;
+    content: "";
+}
+
+.bag_blood{
+    position: absolute;
+    width: 63px; height: 86px;
+    top:80px; left: 34px;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+    background-color: #ed4c3a;
+}
+
+.bag_plastic{
+    position: absolute;
+    width: 63px; height: 6px;
+    top:73px; left: 34px;
+    background-color: #ade1f9;
+}
+
+.heart_l_eye{
+    top:30px; left: 230px;
+    -webkit-transform: rotate(180deg);
+}
+
+.heart_r_eye{
+    top:30px; left: 275px;
+    -webkit-transform: rotate(180deg);
+}
+
+.heart_l_eye div, .heart_r_eye div{
+    position: absolute;
+    width: 15px; height: 15px;
+    left: 6px;
+    background-color: #0d3455;
+    border-radius: 50%;
+}
+
+.bag_l_eye div, .bag_r_eye div{
+    position: absolute;
+    width: 15px; height: 15px;
+    left: 8px;
+    background-color: #0d3455;
+    border-radius: 50%;
+
+}
+
+.bag_r_eye{
+    left: 71px;
+}
+
+.bag_lips, .heart_lips{
+    position: absolute;
+    width: 20px; height: 12px;
+    top: 110px; left: 55px;
+    border-radius: 50%;
+    border-bottom: solid 6px #913022;
+
+}
+
+.heart_lips{
+    top:45px; left: 254px;
+}
+
+.bag_l_blush, .bag_r_blush, .heart_l_blush, .heart_r_blush{
+    position: absolute;
+    width: 13px; height: 8px;
+    top: 125px; left:38px;
+    background-color: #913022;
+    border-radius: 50%;
+}
+
+.heart_l_blush{
+    top:60px; left: 238px;
+}
+
+.heart_r_blush{
+    top:60px; left: 278px;
+}
+
+.bag_r_blush{
+    left: 80px;
+
+}
+
+#heart_load {
+    position: absolute;
+    height: 152px;
+    width: 150px;
+    top: -22px;
+    left: 187px;
+}
+
+#load_blood{
+    position: absolute;
+    top:0;
+    left: 26px;
+    width:98px;
+    height: 70px;
+    background-color: #ade1f9;
+    border-radius: 20px 20px 70% 70%;
+    -webkit-animation: draw 13s linear forwards;
+    -webkit-animation-delay: 2.5s;
+}
+
+.hide_blood{
+    position: absolute;
+    height: 152px;
+    width: 150px;
+    top: 15px;
+    left: 187px;
+    overflow: hidden;
+
+}
+
+@-webkit-keyframes draw {
+    0%{
+        transform: translateY(0px);
+    }
+    20%{
+        border-radius: 10px;
+    }
+    30%{
+        border-radius: 0;
+    }
+    100% {
+        border-radius: 0;
+        transform: translateY(-100px);
+    }
+}
+
+.donating-blood-img{
+    text-align: center;
+    width: 300px;
+}
+
+/*#blood_donation_caption{*/
+/*font-family:'Russo One', sans-serif;*/
+/*text-align: left;*/
+/*color: red;*/
+/*padding-left: 6px;*/
+
+/*}*/
+
+/*#blood_donation_caption .donation_caption{*/
+/*position: absolute;*/
+/*top:338px;*/
+/*left: 178px;*/
+/*letter-spacing: 3px;*/
+/*}*/
+
+/*#blood_donation_caption .letter_D{*/
+/*font-size: 100px;*/
+/*padding-left: 98px;*/
+/*}*/
+
+/*#blood_donation_caption .letter_bloo{*/
+/*position: absolute;*/
+/*top:293px;*/
+/*letter-spacing: 3px;*/
+
+/*}*/
+
+.loading_quotes{
+    font-family: Verdana, sans-serif;
+    font-weight: normal;
+    text-align: center;
+    font-size: 10px;
+    color: #913022;
+    position: absolute;
+    letter-spacing: 2px;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.blood_donating{
+    font-family:'Russo One', sans-serif;
+    text-align: center;
+    color: red;
+    padding-left: 6px;
+    margin-top: 50px;
+    font-size: 26px;
+    letter-spacing: 6px;
+}
+
+.Please_wait{
+    font-family:Verdana, sans-serif;
+    color: red;
+    font-size: 20px;
+    margin: -10px auto;
+    font-weight: normal;
+    -webkit-animation: flash 2s infinite 1.5s;
+}
+
+.bottom-line{
+    width: 100%;
+    height: 3px;
+    background-color: red;
+    margin: 20px auto;
+}
+
+@-webkit-keyframes flash {
+    from, 50%, to { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
+.drop,.drop1,.drop2{
+    position: absolute;
+    top: 310px;
+    left: 36px;
+    height: 22px;
+    width: 26px;
+}
+
+.drop1{ left: 258px; }
+
+.drop2{ left: 278px; }
+
+
+.main_container{
+    position: relative;
+    overflow: hidden;
+    display: none;
+}
+
+.title{
+    height: 100px;
+    color: white;
+    background-color: #eee;
+    position: relative;
+}
+
+.logo-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.logo-box img{
+    width: 560px;
+}
+
+.swiper-container {
+    width: 100vw;
+    height: 240px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.3em;
+    background: #fff;
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+video{
+    margin-left: 50%;
+    width: 500px;
+    transform: translateX(-50%);
+}
+
+.what_is_blood{
+    position: relative;
+    font-family: 'Mitr', sans-serif;
+    color: #ed483c;
+    padding: 16px;
+    overflow: hidden;
+}
+
+.what_is_blood img{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    display: block;
+}
+
+.what_is_blood p{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.1em;
+    color: black;
+}
+
+.what_is_blood b{
+    color: #ed483c;
+}
+
+.images{
+    text-align: center;
+}
+
+.images img{
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.56);
+    max-width: 90%;
+    margin-top: 20px;
+}
+
+
+.what_is_blood .what-is-blood-img{
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.69);
+    border-radius: 10px;
+}
+
+.what_is_blood .what-is-blood-inner,.what-is-blood-inner2,
+.what-is-blood-inner3{
+    position: absolute;
+    top: 20px;
+    left: 60%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    width: 90%;
+    display: block;
+    z-index: -1;
+    opacity: .4;
+}
+
+.what-is-blood-inner3{
+    top:1300px;
+    opacity: .8;
+    transform:rotate(160deg);
+    left: 100px;
+}
+
+.what-is-blood-inner2{
+    top:890px;
+    left: -100px;
+    opacity: .6;
+    transform: rotate(120deg);
+}
+
+.left-padding{
+    padding-left: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+.touch_splash{
+    position: fixed;
+    background: url("https://i.imgur.com/7boVx13.png");
+    background-size: cover;
+    width: 0;
+    height: 0;
+    z-index: 2;
+    display: none;
+}
+
+
+footer{
+    padding :2rem 0;
+    background: #ff338c;
+    color: white;
+    text-align: center;
+    clip-path: polygon(0% 15%, 0 0, 25% 14%, 49% 0, 75% 14%, 100% 0, 100% 85%, 100% 100%, 85% 100%, 15% 100%, 0 100%, 0% 85%);
+}
+
+footer p{
+    padding: 10px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-family: sans-serif;
+}
+
+footer a{
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/*------Cute Container-------*/
+
+.cute_container{
+    position: relative;
+    height: 100vh;
+    font-family: 'Cookie', cursive;
+    text-align: center;
+    background-color: #f2f2f2;
+    overflow: hidden;
+    display: none;
+}
+
+.cute_blood{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40px;
+}
+
+.cute_container p{
+    font-size: 34px;
+    background-image: linear-gradient(120deg, #271eea 0%, #ed2522 70%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/*----------------------------------*/
+
